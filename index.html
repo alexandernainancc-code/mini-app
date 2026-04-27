@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La profe responde 📚</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #111827;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #1f2937;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            max-width: 330px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .pregunta {
+            margin-bottom: 20px;
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        button {
+            background: #ef4444;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #dc2626;
+        }
+
+        #resultado {
+            margin-top: 25px;
+            font-size: 1.3rem;
+            min-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>📚 La profe dice...</h2>
+        <p class="pregunta">Preguntá pues... pero después no digás que no te advertí 😏</p>
+
+        <button onclick="generar()">Preguntar a la profe</button>
+
+        <p id="resultado">👀</p>
+    </div>
+
+    <script>
+        function generar() {
+            let opciones = [
+                '¡Claro que sí! Pero bien hecho, ¿oíste? 😌',
+                'No joven, así no se puede 😑',
+                'Mmm... eso suena a copia 👀',
+                'Hágalo otra vez, pero bonito 😅',
+                'Le falta empeño, póngase pilas 😤',
+                'Sí, pero explíqueme cómo lo hizo 🤨',
+                'No me convence, revíselo 😬',
+                'Puede pasar... pero raspando 😏',
+                '¡Muy bien! Hoy sí lo logró 🎉',
+                'Ay no... esto está sospechoso 😂'
+            ];
+
+            let random = Math.floor(Math.random() * opciones.length);
+            document.getElementById('resultado').innerText = opciones[random];
+        }
+    </script>
+</body>
+</html>
